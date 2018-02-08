@@ -17,22 +17,7 @@
   <description>Open source platform for continuous inspection of code quality</description>
 
   <modules>
-    <module>sonar-plugin-api-deps</module>
-    <module>sonar-application</module>
-    <module>sonar-scanner-engine</module>
-    <module>sonar-scanner-protocol</module>
-    <module>sonar-scanner-engine-shaded</module>
-    <module>sonar-check-api</module>
-    <module>sonar-core</module>
-    <module>sonar-duplications</module>
-    <module>sonar-home</module>
-    <module>sonar-markdown</module>
-    <module>sonar-plugin-api</module>
     <module>server</module>
-    <module>sonar-ws</module>
-    <module>sonar-ws-generator</module>
-    <module>sonar-testing-harness</module>
-    <module>plugins/sonar-xoo-plugin</module>
   </modules>
 
   <organization>
@@ -1443,15 +1428,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-
-    <profile>
-      <!-- integration tests -->
-      <id>tests</id>
-      <modules>
-        <module>tests</module>
-        <module>tests/plugins</module>
-      </modules>
     </profile>
 
     <profile>
