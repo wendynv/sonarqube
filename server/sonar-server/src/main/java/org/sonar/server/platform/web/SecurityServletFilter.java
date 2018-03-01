@@ -57,10 +57,6 @@ public class SecurityServletFilter implements Filter {
 
     // WARNING, headers must be added before the doFilter, otherwise they won't be added when response is already committed (for instance when a WS is called)
 
-    // Clickjacking protection
-    // See https://www.owasp.org/index.php/Clickjacking_Protection_for_Java_EE
-    httpResponse.addHeader("X-Frame-Options", "SAMEORIGIN");
-
     // Cross-site scripting
     // See https://www.owasp.org/index.php/List_of_useful_HTTP_headers
     httpResponse.addHeader("X-XSS-Protection", "1; mode=block");
