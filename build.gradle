@@ -201,15 +201,8 @@ subprojects {
   tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
   }
-
-  def tempDir = file("$buildDir/temp")
-  test.doFirst {
-    // TODO note that due to this any change in this file (even addition of blank line) is considered as modification of input for tests
-    delete tempDir
-    tempDir.mkdirs()
-  }
+  
   test {
-    systemProperty 'java.io.tmpdir', tempDir
     systemProperty 'java.awt.headless', true 
     maxHeapSize = "512m"
     jacoco.enabled = project.hasProperty('jacocoEnabled')
