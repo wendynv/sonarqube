@@ -112,8 +112,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "start-vsts": "node scripts/vsts.start.js",
     "build-fast": "node scripts/build.js --fast",
     "build": "node scripts/build.js",
+    "build-vsts": "node scripts/vsts.build.js",
     "test": "node scripts/test.js",
     "coverage": "npm test -- --coverage",
     "format": "prettier --write --list-different 'src/main/js/!(libs)/**/*.{js,ts,tsx,css}'",
