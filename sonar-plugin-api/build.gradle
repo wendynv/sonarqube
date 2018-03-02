@@ -19,21 +19,15 @@ dependencies {
     exclude group: 'org.slf4', module: 'slf4j-api'
   }
 
-  // TODO not shaded
-  // TODO exclusions
   shadow 'org.codehaus.woodstox:woodstox-core-lgpl'
   shadow 'org.codehaus.woodstox:stax2-api'
   shadow 'org.codehaus.staxmate:staxmate'
 
   compileOnly 'com.google.code.findbugs:jsr305'
   compileOnly 'org.slf4j:slf4j-api'
-  // TODO optional
   compileOnly 'javax.servlet:javax.servlet-api'
-  // TODO optional
   compileOnly 'ch.qos.logback:logback-classic'
-  // TODO optional
   compileOnly 'ch.qos.logback:logback-core'
-  // TODO optional
   compileOnly 'junit:junit'
 
   testCompile 'com.tngtech.java:junit-dataprovider'
@@ -49,7 +43,6 @@ sourceSets {
 }
 
 def on3Digits(version) {
-  
   def projectversion3digits = version - ~/-\w+/
   projectversion3digits = projectversion3digits.tokenize('.').plus(0).take(3).join('.')
 }
