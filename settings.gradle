@@ -24,6 +24,7 @@ include 'sonar-scanner-engine-shaded'
 include 'sonar-scanner-protocol'
 include 'sonar-testing-harness'
 include 'sonar-ws'
+include 'sonar-ws-generator'
 
 include 'plugins:sonar-xoo-plugin'
 include 'server:sonar-qa-util'

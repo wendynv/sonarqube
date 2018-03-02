@@ -1,0 +1,24 @@
+sonarqube {
+  skipProject = true
+}
+
+artifactoryPublish.skip = true
+
+dependencies {
+  compile 'org.apache.velocity:velocity:1.7'
+  compile 'org.slf4j:log4j-over-slf4j'
+  compile 'org.sonarsource.orchestrator:sonar-orchestrator'
+  compile project(path: ':sonar-ws')
+  compile 'com.google.code.gson:gson:2.8.2'
+  compile 'com.google.guava:guava'
+  compileOnly 'com.google.code.findbugs:jsr305'
+}
+
+task fatJar(type: Jar) {
+  manifest {
+    attributes 'Main-Class': 'org.sonarqube.wsgenerator.Generator'
+  }
+  classifier = 'jar-with-dependencies'
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
+}
