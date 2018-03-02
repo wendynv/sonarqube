@@ -249,10 +249,6 @@ subprojects {
   }
 }
 
-configurations {
-  archives
-}
-
 apply plugin: 'maven-publish'
 artifactory {
   clientConfig.setIncludeEnvVars(true)
