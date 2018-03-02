@@ -7,7 +7,8 @@ sonarqube {
 apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
-  //Versions must not be changed and overridden from parent pom. These are the versions defined in SQ 5.1
+  //Versions must not be changed and overridden from root build.gradle (see dependencyManagement section).
+  //These are the versions defined in SQ 5.1
   compile 'com.google.code.gson:gson:2.3.1'
   compile 'com.google.guava:guava:10.0.1'
   compile 'commons-beanutils:commons-beanutils:1.9.3'
@@ -17,10 +18,8 @@ dependencies {
   compile 'commons-io:commons-io:2.4'
   compile 'commons-lang:commons-lang:2.6'
   compile('dom4j:dom4j:1.6.1') {
-  // TODO provided inherited from parent pom
     exclude group: 'xml-apis'
   }
-//  compile 'xml-apis:xml-apis:1.4.01'
   compile 'org.picocontainer:picocontainer:2.14.3'
   compile 'org.slf4j:slf4j-api:1.7.10'
   compile 'ch.qos.logback:logback-classic:1.1.2'
