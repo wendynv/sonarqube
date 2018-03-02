@@ -32,11 +32,10 @@ dependencies {
   testCompileOnly 'com.google.code.findbugs:jsr305'
 }
 
-// FIXME what's this?
+// sonar-plugin-api.jar is copied into target JAR file
 processResources {
   into('/') {
     from configurations.includeInResources
-    // TODO cache not invalidated when pattern changes?
     rename '(.*)-' + project.version + '-all.jar', '$1.jar'
   }
 }
