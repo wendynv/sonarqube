@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: DAO'
+    property 'sonar.projectName', "${sonarProjectName} :: DAO"
   }
 }
 

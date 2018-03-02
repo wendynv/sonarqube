@@ -19,7 +19,7 @@ buildscript {
 apply plugin: 'org.sonarqube'
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube'
+    property 'sonar.projectName', sonarProjectName
   }
 }
 

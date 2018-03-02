@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: Priviledged Plugin Bridge'
+    property 'sonar.projectName', "${sonarProjectName} :: Priviledged Plugin Bridge"
   }
 }
 

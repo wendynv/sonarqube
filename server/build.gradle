@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: Server :: Parent'
+    property 'sonar.projectName', "${sonarProjectName} :: Server :: Parent"
   }
 }
 

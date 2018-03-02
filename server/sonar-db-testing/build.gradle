@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: DB testing'
+    property 'sonar.projectName', "${sonarProjectName} :: DB testing"
   }
 }
 

@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: Database Core'
+    property 'sonar.projectName', "${sonarProjectName} :: Database Core"
   }
 }
 

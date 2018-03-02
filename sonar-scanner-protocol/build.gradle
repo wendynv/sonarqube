@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: Scanner :: Protocol'
+    property 'sonar.projectName', "${sonarProjectName} :: Scanner :: Protocol"
     property 'sonar.exclusions', 'src/main/java/org/sonar/scanner/protocol/viewer/**'
   }
 }

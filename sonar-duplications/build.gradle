@@ -1,6 +1,6 @@
 sonarqube {
   properties {
-    property 'sonar.projectName', 'SonarQube :: Duplications'
+    property 'sonar.projectName', "${sonarProjectName} :: Duplications"
   }
 }
 
