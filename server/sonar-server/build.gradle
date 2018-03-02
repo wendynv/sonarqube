@@ -7,8 +7,7 @@ sonarqube {
 sourceSets {
   test {
     resources {
-      // TODO filtering
-      srcDirs += ['src/test/projects', 'src/test/filteredresources']
+      srcDirs += ['src/test/projects']
     }
   }
 }
