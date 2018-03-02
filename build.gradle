@@ -196,6 +196,8 @@ subprojects {
     }
   }
 
+  apply plugin: 'idea'
+
   apply plugin: 'java'
   sourceCompatibility = 1.8
   tasks.withType(JavaCompile) {
@@ -211,13 +213,23 @@ subprojects {
       events "skipped", "failed"
     }
   }
-
-  apply plugin: 'com.google.protobuf'
-  sourceSets.main.proto.srcDir 'src/main/protobuf'  // in addition to the default 'src/main/proto'
-  sourceSets.test.proto.srcDir 'src/test/protobuf'  // in addition to the default 'src/test/proto'
-  protobuf {
-    protoc {
-      artifact = "com.google.protobuf:protoc:${protobufVersion}"
+ 
+  def protoMainSrc = 'src/main/protobuf'
+  def protoTestSrc = 'src/test/protobuf'
+  if (file(protoMainSrc).exists() || file(protoTestSrc).exists()) {
+    apply plugin: 'com.google.protobuf'
+    sourceSets.main.proto.srcDir protoMainSrc  // in addition to the default 'src/main/proto'
+    sourceSets.test.proto.srcDir protoTestSrc  // in addition to the default 'src/test/proto'
+    protobuf {
+      protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+      }
+    }
+    idea {
+      module {
+        sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/java")
+        testSourceDirs += file("${protobuf.generatedFilesBaseDir}/test/java")
+      }
     }
   }
 
@@ -230,14 +242,6 @@ subprojects {
           'Build-Time': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         )
       }
-    }
-  }
-
-  apply plugin: 'idea'
-  idea {
-    module {
-      sourceDirs += file("${protobuf.generatedFilesBaseDir}/main/java")
-      testSourceDirs += file("${protobuf.generatedFilesBaseDir}/test/java")
     }
   }
 }
