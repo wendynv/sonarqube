@@ -45,9 +45,7 @@ task createDB(type:JavaExec) {
   main = 'org.sonar.db.CreateDb'
   classpath = sourceSets.test.runtimeClasspath
   systemProperty 'orchestrator.configUrl', System.getProperty('orchestrator.configUrl')
-  if (project.hasProperty('cix')) {
-    systemProperty 'sonar.runtimeVersion', version
-  }
+  systemProperty 'sonar.runtimeVersion', version
   systemProperty 'orchestrator.artifactory.apiKey', System.getProperty('orchestrator.artifactory.apiKey')
   systemProperty 'orchestrator.artifactory.repositories', System.getProperty('orchestrator.artifactory.repositories')
 }
