@@ -40,7 +40,7 @@ dependencies {
   compile 'org.sonarsource.update-center:sonar-update-center-common'
   compile 'commons-dbutils:commons-dbutils'
   compile 'org.apache.commons:commons-email'
-  compile 'com.googlecode.java-diff-utils:diffutils:1.2'
+  compile 'com.googlecode.java-diff-utils:diffutils'
   compile 'org.picocontainer:picocontainer'
   compile 'commons-dbcp:commons-dbcp'
   compile 'org.apache.httpcomponents:httpclient'
@@ -55,7 +55,6 @@ dependencies {
   testCompile 'org.assertj:assertj-core'
   testCompile 'org.assertj:assertj-guava'
   testCompile 'org.mockito:mockito-core'
-  // TODO to be removed
   testCompile 'org.hamcrest:hamcrest-all'
   testCompile project(':server:sonar-db-testing')
   testCompile 'com.github.tlrx:elasticsearch-test'

@@ -193,6 +193,7 @@ subprojects {
       }
       dependency 'xml-apis:xml-apis:1.4.01'
       dependency 'org.sonarsource.orchestrator:sonar-orchestrator:3.16.0.1420'
+      dependency 'com.googlecode.java-diff-utils:diffutils:1.2'
     }
   }
 
