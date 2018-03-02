@@ -23,8 +23,7 @@ dependencies {
 }
 
 test {
-  if (System.getProperty('orchestrator.configUrl'))
-    systemProperty 'orchestrator.configUrl', System.getProperty('orchestrator.configUrl')
+  systemProperty 'orchestrator.configUrl', System.getProperty('orchestrator.configUrl')
 }
 
 task testJar(type: Jar) {
