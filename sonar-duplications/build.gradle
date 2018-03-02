@@ -13,7 +13,6 @@ dependencies {
   testCompile 'org.assertj:assertj-core'
   testCompile 'org.mockito:mockito-core'
   testCompile 'commons-io:commons-io'
-  // TODO exclusions
   testCompile 'pmd:pmd:4.3'
   testCompile 'ch.qos.logback:logback-classic'
 }
